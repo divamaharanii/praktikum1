@@ -1,6 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\bencanacontroller;
+use App\Http\Controllers\detail_korbancontroller;
+use App\Http\Controllers\kategori_bencanacontroller;
+use App\Http\Controllers\kecamatancontroller;
+use App\Http\Controllers\kotacontroller;
+use App\Http\Controllers\pelaporancontroller;
+use App\Http\Controllers\provinsicontroller;
+use App\Http\Controllers\rolecontroller;
+use App\Http\Controllers\user_controller;
+use App\Http\Controllers\usercontrolleer;
+use app\Models\sosial;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +26,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('pwbf');
+});
+
+Route::get('/c', function () {
     return view('welcome');
 });
+
+//Route::get('/sosial','SosialController@Index');
+//Route::get('/sosial',[SosialControllerIndex::class,'index']);
+Route::get('/kecamatan',[kecamatancontroller::class,'kecamatan']);
+
+Route::get('/provinsi',[provinsicontroller::class,'provinsi']);
